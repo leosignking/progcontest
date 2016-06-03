@@ -13,9 +13,16 @@ public class Richie_Rich {
         String s = sc.next();
 
         char c[] = s.toCharArray();
+        int max = Integer.MIN_VALUE;
+        for(char ch: c){
+            max = Math.max(max, Character.getNumericValue(ch));
+        }
+
+
         for(int i=0, j=c.length-1; i<c.length; i++, j--) {
             if(c[i] == c[j]) continue;
             else if(k>0) {
+
                 if(c[i] > c[j]) c[j] = c[i];
                 else c[i] = c[j];
                 k--;
